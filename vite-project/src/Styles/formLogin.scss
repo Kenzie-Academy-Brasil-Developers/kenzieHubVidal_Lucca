@@ -1,0 +1,49 @@
+.formLogin {
+    background-color: var(--color-grey3);
+    width: 360px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    margin-left: 600px;
+    margin-top: 50px;
+
+    input {
+        width: 320px;
+        border-radius: 5px;
+        height: 48px;
+        margin-bottom: 10px;
+    }
+
+    label {
+
+        margin-top: 10px;
+
+    }
+
+
+}
+
+.log {
+    height: 48px;
+
+}
+
+h3 {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    color: var(--color-grey0);
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.125rem;
+
+}
+
+.logoLogin {
+    color: var(--color-pink);
+    margin-left: 710px;
+    margin-top: 25px;
+
+
+}

@@ -1,0 +1,71 @@
+.form {
+    background-color: var(--color-grey3);
+    width: 370px;
+    height: 815px;
+    display: flex;
+    justify-content: center;
+    margin-left: 600px;
+    margin-top: 50px;
+
+}
+
+form {
+    display: grid;
+
+}
+
+.logo {
+    display: flex;
+    color: var(--color-pink);
+    margin-left: 600px;
+    margin-top: 15px;
+    gap: 180px;
+
+}
+
+.back {
+    width: 60px;
+    height: 40px;
+    background-color: var(--color-grey3);
+    color: var(--color-grey0);
+    border: none;
+    border-radius: 5px;
+
+}
+
+button {
+    width: 324px;
+    height: 48px;
+    background-color: var(--color-pink);
+
+}
+
+.create {
+    color: var(--color-grey0);
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-left: 101px;
+    margin-top: 35px;
+
+}
+
+.subtitle {
+    color: var(--color-grey2);
+    margin-left: 64px;
+
+}
+
+.register {
+    border-radius: 8px;
+    border: none;
+    margin-top: 7px;
+
+}
+
+select {
+    background-color: var(--color-grey);
+    color: var(--color-grey0);
+    height: 48px;
+
+}

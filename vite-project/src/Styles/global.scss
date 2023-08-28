@@ -1,0 +1,27 @@
+:root {
+    --color-pink: #FF577F;
+    --color-grey: #343B41;
+    --color-grey2: #868E96;
+    --color-grey0: #F8F9FA;
+    --color-grey3: #212529;
+    --font-primary: 'Inter', sans-serif;
+
+}
+
+body {
+    background-color: #121214;
+
+}
+
+input {
+    background-color: var(--color-grey);
+    height: 48px;
+}
+
+label {
+    color: var(--color-grey0);
+    font-family: var(--font-ptimary);
+    font-weight: 400;
+    font-size: 0.8125rem;
+    // margin-top: 30px;
+}
