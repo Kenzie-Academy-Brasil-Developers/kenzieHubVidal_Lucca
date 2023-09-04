@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { formRegister } from "../Routes/register.js";
 
 export const RegisterPage = () => {
 
@@ -9,7 +11,9 @@ export const RegisterPage = () => {
 
     }
 
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: {errors}} = useForm({
+        resolver:zodResolver(formRegister)
+    });
 
     const submit = (formData) => {
 
@@ -31,10 +35,13 @@ export const RegisterPage = () => {
                     <p className="subtitle">Rápido e grátis, vamos nessa</p>
                     <label >Seu nome</label>
                     <input type="text" placeholder="Nome" {...register("name")} />
+                    {errors.name && <p className="error">{errors.name.message}</p>}
                     <label >Seu email</label>
-                    <input type="email" placeholder="Digite seu nome" {...register("email")} />
+                    <input type="email" placeholder="Digite seu nome" {...register("email")}error={errors.email} />
+                    {errors.email && <p className="error">{errors.email.message}</p>}
                     <label >Sua senha</label>
                     <input type="password" placeholder="Digite sua senha" {...register("password")} />
+                    {errors.password && <p className="error">{errors.password.message}</p>}
                     <label >Confirmar senha</label>
                     <input type="password" placeholder="Digite novamente sua senha" {...register("password")} />
                     <label >Contato</label>
@@ -48,6 +55,8 @@ export const RegisterPage = () => {
                         <option value="Módulo 3">Módulo 3</option>
                     </select>
                     <button className="register">Cadastrar</button>
+
+
                 </form>
             </div>
         </div>
