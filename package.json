@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-hook-form": "^7.45.4",
+    "vercel": "^32.1.0"
+  }
+}
