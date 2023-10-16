@@ -8,7 +8,7 @@ export const RoutesMain = () => {
         <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-       
+
         </Routes>
     )
 

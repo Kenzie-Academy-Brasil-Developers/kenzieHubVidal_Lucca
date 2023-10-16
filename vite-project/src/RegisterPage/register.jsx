@@ -11,13 +11,13 @@ export const RegisterPage = () => {
 
     }
 
-    const { register, handleSubmit, formState: {errors}} = useForm({
-        resolver:zodResolver(formRegister)
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: zodResolver(formRegister)
     });
 
     const submit = (formData) => {
 
-        console.log(formData);
+       
     }
 
     return (
@@ -37,7 +37,7 @@ export const RegisterPage = () => {
                     <input type="text" placeholder="Nome" {...register("name")} />
                     {errors.name && <p className="error">{errors.name.message}</p>}
                     <label >Seu email</label>
-                    <input type="email" placeholder="Digite seu nome" {...register("email")}error={errors.email} />
+                    <input type="email" placeholder="Digite seu nome" {...register("email")} error={errors.email} />
                     {errors.email && <p className="error">{errors.email.message}</p>}
                     <label >Sua senha</label>
                     <input type="password" placeholder="Digite sua senha" {...register("password")} />
