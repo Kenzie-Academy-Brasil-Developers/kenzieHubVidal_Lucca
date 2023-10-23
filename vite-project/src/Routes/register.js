@@ -13,3 +13,21 @@ export const formRegister = z.object(
       confirmPassword: z.string().nonempty("É necessário confirmar a senha"),
 
    })
+
+export const loginPage = z.object(
+
+
+   {
+      email: z.string().nonempty("Email obrigatório").email("Forneça um email válido"),
+      password: z.string().nonempty("Digite a senha")
+
+
+
+
+
+
+
+   }
+
+
+)

@@ -37,6 +37,7 @@ button {
     width: 324px;
     height: 48px;
     background-color: var(--color-pink);
+    color: white;
 
 }
 
@@ -67,5 +68,12 @@ select {
     background-color: var(--color-grey);
     color: var(--color-grey0);
     height: 48px;
+
+}
+
+label {
+
+    font-family: var(--font-primary);
+    font-weight: 400;
 
 }
