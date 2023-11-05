@@ -10,15 +10,13 @@ export const LoginPage = () => {
     navigate("/register")
 
   }
-
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(loginPage)
   });
 
   const submit = (formData) => {
-
+    console.log("naoo")
   }
-
   return (
     <div>
       <div className="logoLogin">
