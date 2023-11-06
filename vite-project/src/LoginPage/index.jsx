@@ -2,8 +2,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginPage } from "../Routes/register.js";
-
-export const LoginPage = () => {
+import api from "../services/api.js";
+export const LoginPage = ({setUser}) => {
 
   const navigate = useNavigate();
   const userRegister = () => {
@@ -14,8 +14,22 @@ export const LoginPage = () => {
     resolver: zodResolver(loginPage)
   });
 
-  const submit = (formData) => {
-    console.log("naoo")
+const userLogin = async (payload) => {
+try {
+  const {data}=await api.post("/sessions", payload)
+  localStorage.setItem("@TOKEN", data.token);
+navigate("/dashboard")
+} catch (error) {
+  console.log(error)
+  
+}
+
+
+}
+
+
+  const submit = (payload) => {
+   userLogin(payload)
   }
   return (
     <div>

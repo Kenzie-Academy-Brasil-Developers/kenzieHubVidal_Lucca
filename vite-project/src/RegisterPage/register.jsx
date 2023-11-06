@@ -2,20 +2,39 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formRegister } from "../Routes/register.js";
-
+import api from "../services/api.js";
 export const RegisterPage = () => {
 
     const navigate = useNavigate();
     const backRegister = () => {
         navigate("/")
-
     }
+
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(formRegister)
     });
 
-    const submit = (formData) => {
-        console.log("naoooo")
+
+    const registerUser = async (payload) => {
+        try {
+
+            await api.post("/users", payload)
+            navigate("/")
+
+
+            alert("Cadastro realizado")
+
+        } catch (error) {
+            console.log(error);
+            if (error.response?.data === "Email already exists") {
+                alert("Usuário já existe")
+
+            }
+        }
+
+    };
+    const submit = (payload) => {
+        registerUser(payload)
     }
     return (
 
@@ -38,18 +57,20 @@ export const RegisterPage = () => {
                     <input type="password" placeholder="Digite sua senha" {...register("password")} />
                     {errors.password && <p className="error">{errors.password.message}</p>}
                     <label >Confirmar senha</label>
-                    <input type="password" placeholder="Digite novamente sua senha" {...register("ConfirmPassword")} />
+                    <input type="password" placeholder="Digite novamente sua senha" {...register("confirmPassword")} />
                     <label >Contato</label>
-                    <input type="contato" placeholder="Opção de contato" {...register("contato")} />
+                    <input type="contact" placeholder="Opção de contato" {...register("contact")} />
+                    {errors.contact && <p className="error">{errors.contact.message}</p>}
                     <label >Bio</label>
-                    <input type="text" placeholder="Fale sobre você" {...register("Bio")} />
+                    <input type="bio" placeholder="Fale sobre você" {...register("bio")} />
                     <label >Selecione seu módulo</label>
-                    <select name="" id="">
+                    <select name="course_module" id="course_module" {...register("course_module")}>
                         <option value="Módulo 1">Módulo 1</option>
                         <option value="Módulo 2">Módulo 2</option>
                         <option value="Módulo 3">Módulo 3</option>
                     </select>
-                    <button> Cadastrar</button>
+
+                    <button type="submit">Cadastrar</button>
 
 
                 </form>
