@@ -7,6 +7,11 @@ import api from '../services/api.js';
 
 export const LoginPage = ({ setUser }) => {
   const navigate = useNavigate();
+  const goRegister = () => {
+    navigate("/register")
+  }
+
+
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(loginPage),
   });
@@ -57,7 +62,7 @@ export const LoginPage = ({ setUser }) => {
           <input type="password" placeholder="Sua senha" {...register("password")} />
           {errors.password && <p className="error">{errors.password.message}</p>}
           <button className="log">Entrar</button>
-          <button >Cadastre-se</button>
+          <button onClick={goRegister}>Cadastre-se</button>
         </form>
       </div>
     </div>
